@@ -1,0 +1,21 @@
+readme :
+
+Il faut compiler à l'aide du makefile ainsi, il suffit seulement de se placer dans le repertoire des fichiers .c , .h et du makefile :
+
+>> make
+>> ./Projet_MONTREUIL
+
+qui permet de faire executer le programme
+
+Ensuite, il suffit de répondre aux questions pour tester le programme.
+La création des différents fichiers se fait dans le repertoire courant (celui d'exécution)
+
+Un fois le programme réalisé il suffit d'executer :
+
+>> make clean
+
+qui efface tous les .o et permettent de pouvoir executer le programme une nouvelle fois.
+
+Les fichiers permettent d'avoir la possibilitée de tracer les courbes désirées directement depuis le shell.
+
+

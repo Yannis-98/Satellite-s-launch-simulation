@@ -1,0 +1,127 @@
+Listing des programmes :
+
+
+affichage.c :
+
+	void AfficheVecteur(char *msg,Vecteur V) 
+	- Affichage des Vecteurs
+	void AfficheMatrice(char *msg,Matrice V)
+	- Affichage des Matrices
+
+initialisation.c :
+	
+	Vecteur InitVecteurZero(int Ni)
+	- Cette fonction permet d'allouer le tableau dynamique et d'initialiser tous les 	coefficients du Vecteur à 0.
+	Matrice InitMatriceZero(int Ni, int Nj)
+	- Cette fonction permet d'allouer le tableau dynamique et d'initialiser tous les coefficients de la matrice à 0.
+	Vecteur InitVecteur(double a, double b, int Ni)
+	- Initialise un Vecteur
+	Matrice InitMatrice(int m, Vecteur x)
+	- Initialise une Matrice
+
+Question1.c :
+
+	Vecteur y_exact(Vecteur x)
+	- Calcul notre Vecteur y_exact
+	Matrice transpo(Matrice A)
+	- Réalise la transposée d'une matrice
+	Matrice multipleM(Matrice A, Matrice B)
+	- Réalise le produit de deux Matrices
+	Vecteur multipleV(Matrice A, Vecteur y)
+	- Réalise le produit d'une Matrice par un Vecteur
+	void factoriser_LU( Matrice *M, Matrice *U, Matrice *L )
+	- On resout à l'aide de l'algorithme de LU
+	Vecteur resol_trig_inf( Matrice L, Vecteur b)
+	- Résolution par la descente
+	Vecteur resol_trig_sup( Matrice U, Vecteur y_reso) 
+	- Résolution par la remontée
+
+Question2.c :
+	
+	double f_moindre(Vecteur a, double x)
+	- Calcul le resultat de notre fonction approchée
+	Vecteur fonc_moindre_carre(Vecteur a, Vecteur x) 
+	- Calcul le resultat de notre fonction approchée mais en prenant comme paramètre un vecteur
+	double inte_trapeze(Vecteur y, Vecteur x)
+	- Intégrale par la méthode des trapezes
+	double inte_trapeze_m(Vecteur a, Vecteur x)
+	- Intégrale par la méthode des trapezes en utilisant notre fonction moindre
+
+Question3.c :
+
+	double inte_simpson(Vecteur y, Vecteur x)
+	- Calcul de l'integrale par la méthode de simpson
+	double inte_simpson_m(Vecteur a, Vecteur x)
+	- Calcul de l'integrale par la methode de simpson mais en utilisant notre fonction approchée
+	double inte_gauss(Vecteur a, Vecteur x)
+	- Calcul de l'intégrale par la méthoe de Gauss
+
+Question4.c :
+
+	void comparaison_int(double I_simps, double I_gauss, double I_exact)
+	- Comparaison des intégrales en exprimant l'erreur relative
+
+Question5.c : 
+
+	double erreur_quadr(Vecteur y, Vecteur ym, int N)
+	- Calcul de l'erreur quadratique moyen
+
+Question_EDO_erreur.c :
+	
+	double f_dif(double x, double y) 
+	- Fonction permettant de ne plus la reécrire à chaque fois, et à utiliser un formalisme simple, fonction récurssive
+	Vecteur diff_S1(Vecteur x)
+	- Calcul de la différentiel à l'aide du schéma 1
+	Vecteur diff_S2(Vecteur x)
+	- Schema 2
+	Vecteur diff_S3(Vecteur x)
+	- Schema 3
+	Vecteur diff_S4(Vecteur x) 
+	- Schema 4
+	double Variance(Vecteur y, Vecteur ym, int N)
+	- Calcul de la variance pour chaque schéma
+
+Question_II_2.c :
+	
+	double fonc_u(double x, double y)
+	- Fonction permettant de ne plus la reécrire à chaque fois, et à utiliser un formalisme simple, fonction récurssive
+	double fonc_v(double x, double y)
+	- Meme chose adapter à v
+	double app_S1(double h, double us1, double vs1, double x, double y, time_t *chrono, double *position)
+	- Calcul de la différentiel à l'aide du schéma 1 avec écriture dans un fichier, on en déduit la trajectoire de notre satellite
+	
+Question_II_3.c :
+	
+	double app_S2(double h, double us1, double vs1, double x, double y, time_t *chrono2, double *position)
+	- Calcul de la différentiel à l'aide du schéma 2 avec écriture dans un fichier, on en déduit la trajectoire de notre satellite
+	
+Question_II_4_5.c :
+
+	void fonc_elipse(int taille_m, Vecteur *X, Vecteur *Y, Vecteur *U, Vecteur *V, Vecteur *t)
+	- On initialise de nouveaux vecteurs permettant de recuperer les valeurs de nos variables de l'orbite de transfert
+	double erreur_ellipse(int taille_m)
+	- Calcul de l'erreur quadratique entre l'équation cartésienne d'une ellipse et de notre trajectoire
+	double inte_simpson_elipse(Vecteur x, Vecteur y, Vecteur U, Vecteur V, Vecteur t)
+	- Calcul du travail par unité de masse sur notre orbite de transfert
+
+Question_II_6.c :
+	double det(double A1, double A2, double B1, double B2)
+	- Permet de calculer un déterminant
+	double f_g1(double  x, double u, double X, double Y, double d_t)
+	- Permet de calculer le resultat de notre fonction g1, venant de la jacobienne du système
+	double f_dg1x(double X, double Y, double d_t) 
+	- Derivé calculé à la main de g1 par rapport à x
+	double f_dg1y(double X, double Y, double d_t) 
+	- Meme chose par rapport à y
+	double f_g2(double  y, double v, double X, double Y, double d_t)
+	- Permet de calculer le resultat de notre fonction g2, venant de la jacobienne du système	
+	double f_dg2x(double X, double Y, double d_t)
+	- Derivé calculé à la main de g2 par rapport à x
+	double f_dg2y(double X, double Y, double d_t)
+	- Derivé calculé à la main de g2 par rapport à y
+	void Newton(double xn, double yn, double un, double vn, double d_t, double *xnp1, double *ynp1)
+	- Calcul de la méthode Newton-Raphton à l'aide d'un developpement analytique, les fonctions précédente permettent de calculer nos racines
+	double app_S3(double d_t, double us1, double vs1, double x1, double y1, time_t *chrono3, double *position)
+	- On calcul notre différentiel en utilisant la méthode de Newton, ainsi qui le schéma Euler Implicite
+	
+	
